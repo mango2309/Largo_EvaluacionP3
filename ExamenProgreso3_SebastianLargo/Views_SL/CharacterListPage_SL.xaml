@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenProgreso3_SebastianLargo.Views_SL.CharacterListPage_SL">
+    <StackLayout>
+        <Button Text="Cargar Caracteres" 
+                Command="{Binding LoadCharactersCommand}"
+                IsEnabled="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}"/>
+        <ActivityIndicator IsRunning="{Binding IsLoading}" 
+                           IsVisible="{Binding IsLoading}"/>
+        <CollectionView ItemsSource="{Binding Characters}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                        <Image Source="{Binding Images}" HeightRequest="100" WidthRequest="100"/>
+                        <Button Text="Save" 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.SaveCharacterCommand}"
+                                CommandParameter="{Binding}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentView>

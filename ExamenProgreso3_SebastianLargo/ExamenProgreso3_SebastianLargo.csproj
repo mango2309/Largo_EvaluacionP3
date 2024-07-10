@@ -66,13 +66,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views_SL\Character_SL.xaml.cs">
-	    <DependentUpon>Character_SL.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views_SL\Character_SL.xaml">
+	  <MauiXaml Update="Views_SL\CharacterListPage_SL.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
